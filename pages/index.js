@@ -1,38 +1,10 @@
-import appConfig from '../config.json'
-import { Box, Button, Text, TextField, Image } from '@skynexui/components'
-
-function GlobalStyle() {
-    return (
-      <style global jsx>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          list-style: none;
-        }
-        body {
-          font-family: 'Open Sans', sans-serif;
-        }
-        /* App fit Height */ 
-        html, body, #__next {
-          min-height: 100vh;
-          display: flex;
-          flex: 1;
-        }
-        #__next {
-          flex: 1;
-        }
-        #__next > * {
-          flex: 1;
-        }
-        /* ./App fit Height */ 
-      `}</style>
-    );
-  }
+import React from 'react';
+import appConfig from '../config.json';
+import { useRouter } from 'next/router';
+import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 
 
 function Titulo(props) {
-    console.log(props);
     const Tag = props.tag || 'h1';
     return (
         <>
@@ -62,11 +34,12 @@ function Titulo(props) {
 //   export default HomePage
 
 export default function PaginaInicial() {
-    const username = 'leandro-ikehara';
+    //const username = 'leandro-ikehara';
+    const [username, setUserName] = React.useState('leandro-ikehara');
+    const roteamento = useRouter();
   
     return (
       <>
-        <GlobalStyle />
         <Box
           styleSheet={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -92,18 +65,43 @@ export default function PaginaInicial() {
           >
             {/* Formulário */}
             <Box
-              as="form"
+              as="form" 
+              onSubmit={function(infosDoEvento) {
+                infosDoEvento.preventDefault();
+                console.log("Alguém enviou o formulário");
+                roteamento.push('/chat');
+              }}              
               styleSheet={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                 width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
               }}
             >
-              <Titulo tag="h2">Boas vindas de volta!</Titulo>
-              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+              <Titulo tag="h2">Bem vindos, Super!</Titulo>
+              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme['color-blue'] }}>
                 {appConfig.name}
               </Text>
   
+              {/* <input
+                type="text"
+                value={username}
+                onChange={function handler(event) {
+                  console.log('usuário digitou', event.target.value);
+                  // Onde está o valor?
+                  const valor = event.target.value;
+                  // Trocar o valor da variável através do React 
+                  setUserName(valor);
+                }}
+                /> */}
+
               <TextField
+              value={username}
+              onChange={function handler(event) {
+                console.log('usuário digitou', event.target.value);
+                // Onde está o valor?
+                const valor = event.target.value;
+                // Trocar o valor da variável através do React 
+                setUserName(valor);
+              }}
                 fullWidth
                 textFieldColors={{
                   neutral: {
