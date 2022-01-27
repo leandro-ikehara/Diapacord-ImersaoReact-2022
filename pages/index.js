@@ -43,8 +43,8 @@ export default function PaginaInicial() {
         <Box
           styleSheet={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            backgroundColor: appConfig.theme['color-blue'].primary,
-            backgroundImage: 'url(https://noladob.com.br/wp-content/uploads/2021/09/the-boys-finalizadas-as-gravacoes-da-3a-temporada.jpg)',
+            backgroundColor: appConfig.theme['color-blue'].primary[700],
+            backgroundImage: 'url(https://i.pinimg.com/originals/c5/c8/1f/c5c81f547dce8c093762048d724215ff.jpg)',
             backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
           }}
         >
@@ -76,8 +76,8 @@ export default function PaginaInicial() {
                 width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
               }}
             >
-              <Titulo tag="h2">Bem vindos, Super!</Titulo>
-              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme['color-blue'] }}>
+              <Titulo tag="h2">Bem vindo, soldado!</Titulo>
+              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme['color-blue'].primary[800] }}>
                 {appConfig.name}
               </Text>
   
