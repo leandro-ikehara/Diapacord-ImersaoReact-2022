@@ -28,7 +28,6 @@ function GlobalStyle() {
 }
 
 export default function MyApp({ Component, pageProps }) {
-    console.log("teste em todas as páginas");
     return (
         <>
             <GlobalStyle />

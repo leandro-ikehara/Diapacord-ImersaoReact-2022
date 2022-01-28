@@ -43,7 +43,7 @@ export default function PaginaInicial() {
         <Box
           styleSheet={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            backgroundColor: appConfig.theme['color-blue'].primary[700],
+            backgroundColor: appConfig.theme.colors['color-blue'],
             backgroundImage: 'url(https://i.pinimg.com/originals/c5/c8/1f/c5c81f547dce8c093762048d724215ff.jpg)',
             backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
           }}
@@ -60,7 +60,7 @@ export default function PaginaInicial() {
               width: '100%', maxWidth: '700px',
               borderRadius: '5px', padding: '32px', margin: '16px',
               boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-              backgroundColor: appConfig.theme.colors.neutrals[700],
+              backgroundColor: appConfig.theme.transparency.fundo,
             }}
           >
             {/* Formulário */}
@@ -68,7 +68,6 @@ export default function PaginaInicial() {
               as="form" 
               onSubmit={function(infosDoEvento) {
                 infosDoEvento.preventDefault();
-                console.log("Alguém enviou o formulário");
                 roteamento.push('/chat');
               }}              
               styleSheet={{
@@ -77,7 +76,7 @@ export default function PaginaInicial() {
               }}
             >
               <Titulo tag="h2">Bem vindo, soldado!</Titulo>
-              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme['color-blue'].primary[800] }}>
+              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors['color-blue'].primary[800] }}>
                 {appConfig.name}
               </Text>
   
@@ -96,7 +95,6 @@ export default function PaginaInicial() {
               <TextField
               value={username}
               onChange={function handler(event) {
-                console.log('usuário digitou', event.target.value);
                 // Onde está o valor?
                 const valor = event.target.value;
                 // Trocar o valor da variável através do React 
