@@ -57,4 +57,15 @@ Nesta aula vamos integrar com o Supabase! Uma ferramenta de "Back-End as a Servi
   - Mario Souto: Mostrar o loading de mensagens (Tem que fazer o mais criativo ein!)
   - Paulo Silveira: Fazer um efeito quando passar o mouse em cima 
 
-Se quiser tentar criar alguma coisa mais diferentona, fique a vontade para criar e compartilhe com a gente :)
+Se quiser tentar criar alguma coisa mais diferentona, fique a vontade para criar e compartilhe com a gente :) 
+
+## Aula 5: Adicionando suporte para Stickers e dicas essenciais para próximos passos 
+
+E estamos chegando ao fim da nossa imersão... Mas não é pra ficar triste! Nesta aula vamos falar sobre:
+- Web Sockets 
+- E adicionar os stickers que você pode pegar 
+
+Lembre de postar o resultado final do seu Aluracord com a hashtag #ImersaoReact marcando o Mario e o Paulo!
+
+- Desafios 
+  - Agora é com você! Adicione o que você achar de mais legal no projeto e compartilha com a gente no twitter! Estamos extremamente orgulhosos de ver tudo o que vocês estão criando e compartilhando.
